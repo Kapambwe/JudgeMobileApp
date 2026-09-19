@@ -30,18 +30,17 @@
         <a href="." class="reload">Reload</a>
         <span class="dismiss">🗙</span>
     </div>
+    <script src="_framework/blazor.webassembly.js"></script>
+    <script src="_content/Radzen.Blazor/Radzen.Blazor.js"></script>
     <script>
         (function () {
             const params = new URLSearchParams(window.location.search);
             const path = params.get('path');
             if (path) {
-                const basePath = document.querySelector('base')?.getAttribute('href')?.replace(/\/$/, '') || '/JudgeMobileApp';
-                window.history.replaceState(null, '', basePath + decodeURIComponent(path));
+                window.history.replaceState(null, '', '/JudgeMobileApp' + decodeURIComponent(path));
             }
         })();
     </script>
-    <script src="_framework/blazor.webassembly.js"></script>
-    <script src="_content/Radzen.Blazor/Radzen.Blazor.js"></script>
 </body>
 
 </html>
